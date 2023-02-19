@@ -1,3 +1,6 @@
+import { loginUser, loginWithGoogle } from "../../lib/authentication.js";
+import { validatedMessage, validatedEmailReset, errorsFirebase } from "../../components/login-and-registration-validation.js";
+
 export default () => {
     const containerLogin = document.createElement("div");
 
@@ -5,15 +8,16 @@ export default () => {
     <section class="containerExternal">
         <section class="boxExternal">
             <section class="box box-one">
-                <button><span>Sign in with Google</span></button>
+                <button id="btnGoogle"><span>Sign in with Google</span></button>
             </section>
             <section class="box box-two">
                 <form>
-                    <input type="text" placeholder="email" />
-                    <input type="password" placeholder="Senha" />
+                    <input id="user-email" type="text" placeholder="email" />
+                    <input id="user-password" type="password" placeholder="Senha" />
                 </form>
                 <section class="box box-three">
-                    <button class="btnLogin">Entrar</button>
+                    <button id="btnLogin">Entrar</button>
+                    <p id="message"></p>
                     <button>Esqueceu a senha?</button>
                 </section>
             </section>
@@ -22,7 +26,46 @@ export default () => {
     </section>
     `;
 
-    containerLogin.innerHTML = templateLogin
+    containerLogin.innerHTML = templateLogin;
+
+    const btnLoginGoogle = containerLogin.querySelector("#btnGoogle");
+    const btnLoginWithEmail = containerLogin.querySelector("#btnLogin");
+
+    const name = "";
+    const email = containerLogin.querySelector("#user-email");
+    const password = containerLogin.querySelector("#user-password");
+
+    btnLoginGoogle.addEventListener("click", (e) => {
+        e.preventDefault();
+        loginWithGoogle()
+            .then(() => {
+                window.location.hash = "#feed";
+            })
+            .catch((error) => {
+                const errorMessage = errorsFirebase(error.code);
+                const message = containerLogin.querySelector('#message');
+                message.innerHTML = errorMessage;
+            });
+    });
+
+    btnLoginWithEmail.addEventListener("click", (e) => {
+        e.preventDefault();
+        const validation = validatedMessage(name, email.value, password.value);
+        if (validation !== "") {
+            const message = containerLogin.querySelector("#message");
+            message.innerHTML = validation;
+        } else {
+            loginUser(email.value, password.value)
+                .then(() => {
+                    window.location.hash = "#feed";
+                })
+                .catch((error) => {
+                    const errorMessage = errorsFirebase(error.code);
+                    const message = containerLogin.querySelector("#message");
+                    message.innerHTML = errorMessage;
+                })
+        }
+    })
 
     return containerLogin;
 }
