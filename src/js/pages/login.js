@@ -18,7 +18,7 @@ export default () => {
                 <section class="box box-three">
                     <button id="btnLogin">Entrar</button>
                     <p id="message"></p>
-                    <button>Esqueceu a senha?</button>
+                    <button class="btnReset">Esqueceu a senha?</button>
                 </section>
             </section>
             <p>Não tem uma conta? <a href="#signup">Inscreva-se</a></p>

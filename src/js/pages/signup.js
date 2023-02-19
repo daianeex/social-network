@@ -6,7 +6,7 @@ export default () => {
         <section class="boxExternal">
             <section class="titleSignUp">
                 <h1>Crie sua conta</h1>
-            <section>
+            </section>
             <section class="box box-two">
                 <form>
                     <input type="text" placeholder="name" />
