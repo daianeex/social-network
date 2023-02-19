@@ -1,29 +1,32 @@
 import login from "../js/Pages/login.js";
-import register from "../js/Pages/register.js";
+import signup from "../js/Pages/signup.js";
 import feed from "../js/pages/feed.js";
 
 const main = document.querySelector("#root");
 
-const init = () => {
-    window.addEventListener("hashchange", () => {
-        main.innerHTML = ""
-        switch(window.location.hash) {
-            case " ":
-                main.appendChild(login());
-                break;
-            case "#register":
-                main.appendChild(register());
-                break;
-            case "#feed":
-                main.appendChild(feed());
-                break;
-            default:
-                main.appendChild(login());
-        }
-    })
+function checkHash() {
+    switch (window.location.hash) {
+        case " ":
+            main.appendChild(login());
+            break;
+        case "#signup":
+            main.appendChild(signup());
+            break;
+        case "#feed":
+            main.appendChild(feed());
+            break;
+        default:
+            main.appendChild(login());
+    }
 }
 
+const init = () => {
+    window.addEventListener("hashchange", () => {
+        main.innerHTML = "";
+        checkHash();
+    })
+}
 window.addEventListener("load", () => {
-    main.appendChild(login());
+    checkHash();
     init();
 })
