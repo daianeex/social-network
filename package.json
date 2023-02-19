@@ -1,0 +1,24 @@
+{
+  "name": "socialnetwork",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "serve -s src/",
+    "deploy": "gh-pages -d src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daianeex/social-network.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daianeex/social-network/issues"
+  },
+  "homepage": "https://github.com/daianeex/social-network#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
