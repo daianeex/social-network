@@ -1,5 +1,6 @@
 import login from "../js/Pages/login.js";
-import Register from "../js/Pages/register.js";
+import register from "../js/Pages/register.js";
+import feed from "../js/pages/feed.js";
 
 const main = document.querySelector("#root");
 
@@ -11,7 +12,10 @@ const init = () => {
                 main.appendChild(login());
                 break;
             case "#register":
-                main.appendChild(Register());
+                main.appendChild(register());
+                break;
+            case "#feed":
+                main.appendChild(feed());
                 break;
             default:
                 main.appendChild(login());
