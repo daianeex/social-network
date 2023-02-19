@@ -21,7 +21,7 @@ export default () => {
                     <button>Esqueceu a senha?</button>
                 </section>
             </section>
-            <p>Não tem conta? <a href="#register">Cadastrar</a></p>
+            <p>Não tem uma conta? <a href="#signup">Inscreva-se</a></p>
         </section>
     </section>
     `;
