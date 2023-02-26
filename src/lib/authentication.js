@@ -1,5 +1,6 @@
 import {
     signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
     GoogleAuthProvider,
     signInWithPopup,
     signOut
@@ -14,8 +15,7 @@ export function loginUser(email, password) {
 }
 
 export function registerNewUser(name, email, password) {
-    return createUserWithEmailAndPassword(auth, email, password)
-        .then(() => updateProfile(auth.currentUser, { displayName: name }));
+    return createUserWithEmailAndPassword(auth, email, password);
 }
 
 export function loginWithGoogle() {

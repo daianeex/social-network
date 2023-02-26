@@ -31,7 +31,6 @@ export default () => {
     const btnLoginGoogle = containerLogin.querySelector("#btnGoogle");
     const btnLoginWithEmail = containerLogin.querySelector("#btnLogin");
 
-    const name = "";
     const email = containerLogin.querySelector("#user-email");
     const password = containerLogin.querySelector("#user-password");
 
@@ -43,14 +42,14 @@ export default () => {
             })
             .catch((error) => {
                 const errorMessage = errorsFirebase(error.code);
-                const message = containerLogin.querySelector('#message');
+                const message = containerLogin.querySelector("#message");
                 message.innerHTML = errorMessage;
             });
     });
 
     btnLoginWithEmail.addEventListener("click", (e) => {
         e.preventDefault();
-        const validation = validatedMessage(name, email.value, password.value);
+        const validation = validatedMessage(email.value, password.value);
         if (validation !== "") {
             const message = containerLogin.querySelector("#message");
             message.innerHTML = validation;
