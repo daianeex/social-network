@@ -24,8 +24,8 @@ export {
     arrayRemove,
     deleteDoc,
     where,
-  } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore.js"; 
+  } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"; 
   
   export {
     initializeApp,
-  } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js"; 
+  } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"; 
