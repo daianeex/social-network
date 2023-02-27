@@ -3,6 +3,7 @@ import {
     createUserWithEmailAndPassword,
     GoogleAuthProvider,
     signInWithPopup,
+    sendPasswordResetEmail,
     signOut
 } from "./export.js";
 
@@ -21,6 +22,10 @@ export function registerNewUser(name, email, password) {
 export function loginWithGoogle() {
     const provider = new GoogleAuthProvider();
     return signInWithPopup(auth, provider);
+}
+
+export function resetPassword (email) {
+    return sendPasswordResetEmail(auth, email);
 }
 
 export function logout() {

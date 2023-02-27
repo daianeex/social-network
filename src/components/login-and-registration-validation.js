@@ -19,7 +19,7 @@ export function validatedMessage(name, email, password, passwordRepeat) {
     } if (!email) {
       return "Preencha o campo de email!";
     }
-    return "Preencha o campo<br>de email corretamente!";
+    return "Preencha o campo<br>de email corretamente";
   }
   
   export function errorsFirebase(error) {
