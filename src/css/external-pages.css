@@ -1,88 +1,76 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 .containerExternal {
+    max-width: 28rem;
     width: 100%;
-    height: 100vh;
-    background: rgb(219, 217, 217);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
 }
 
 .boxExternal {
-    width: 80%;
-    height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
-    padding: 3rem;
-    box-shadow: 0 10px rgb(110, 110, 110,.2);
-    font-family: "Poppins", sans-serif;
-}
-
-.box, .box button {
-    display: flex;
-    flex-direction: column;
+    border-radius: 4px;
     align-items: center;
 }
 
-.box button {
-    width: 300px;
-    height: 3rem;
+form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;   
+}
+
+.btnFunction {
+    border-radius: 2rem;
+    padding: 0.5rem 2rem;
     background-color: #fff;
+    outline: none;
     font-weight: bold;
     border: 1px solid rgb(211, 210, 210);
     justify-content: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
-.box-two input{
+.paragraphLogin {
+    font-size: 1rem;
+    color: #121212;
+}
+
+input {
     position: relative;
-    width: 300px;
-    height: 3rem;
+    padding: 0.65rem 2rem;
     outline: none;
     border: 1px solid rgb(211, 210, 210);
-    border-radius: 4px;
+    border-radius: 0.5rem;
 }
 
-.box-two input label {
+input label {
     position: absolute;
     top: 0;
 }
 
-.box-two input::placeholder{
+input::placeholder {
     font-size: 1rem;
 }
 
-.box-two .btnReset {
+.btnReset {
+    position: relative;
     background-color: #121212;
     color: #fff;
+    padding: 0.65rem 2rem;
+    border: 1px solid rgb(211, 210, 210);
+    border-radius: 1.8rem;
 }
 
-.containerLog p {
-    font-size: 1rem;
+.containerExternal p{
+    font-size: .7rem;
     color: rgb(138, 136, 136);
 }
-
-.containerLog p a{
+.containerExternal p a{
     text-decoration: none;
     color: #00acee;
 }
-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-    padding: 3rem;
-}
 
 .box-three {
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
 }

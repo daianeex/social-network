@@ -9,14 +9,14 @@ export default () => {
             <section class="titleSignUp">
                 <h1>Crie sua conta</h1>
             </section>
-            <section class="box box-two">
+            <section class="box-two">
                 <form>
-                    <input id="user-name" type="text" placeholder="name" />
-                    <input id="user-email" type="text" placeholder="email" />
+                    <input id="user-name" type="text" placeholder="Nome" />
+                    <input id="user-email" type="text" placeholder="Email" />
                     <input id="user-password" type="password" placeholder="Senha" />
                 </form>
             </section>
-            <section class="box box-three">
+            <section class="box-three">
                 <button id="btn-Register" class="btnFunction">Inscreva-se</button>
                 <p id="message"></p>
             </section>
